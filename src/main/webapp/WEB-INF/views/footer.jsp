@@ -1,0 +1,33 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+
+
+
+<div class="jumbotron text-center"
+	style="margin-top: 10rem !important; padding-top: 2%;">
+	<div class="container-fluid"">
+		<div class=container-fluid>
+			<div class="row" style="text-align: left;">
+				<div class="col-sm-4">
+					<h4>HƯỚNG DẪN</h4>
+					<p>Hướng dẫn mua hàng</p>
+					<p>Chính sách đổi trả hàng</p>
+				</div>
+				<div class="col-sm-4">
+					<h4>CONTACT US</h4>
+					<p>Store I: 445 Sư Vạn Hạnh, P.12, Q.10.</p>
+					<p>Store II: 118/47 Trần Quang Diệu, P.14,</p>
+					<p>Q.3. Store III: 350 Điện Biên Phủ, P.17, Q. Bình Thạnh.</p>
+					<p>Store IV: 463 Quang Trung, P.10, Q. Gò Vấp. 0933782768</p>
+				</div>
+				<div class="col-sm-4">
+					<h4>FOLLOW US</h4>
+					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
+						laboris...</p>
+				</div>
+			</div>
+		</div>
+		<h3 style="padding-top: 3%;">Needs Of Wisdom® All Right Reserved</h3>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+.jumbotron text-center{
+	margin-top: 15rem !important;
+}
+
+h1 {
+	margin-bottom: 5%;
+}
+
+#detail {
+	width: 600px !important;
+}
+
+#login {
+	margin-top: 5% !important;
+	padding-top: 5% !important;
+}
+
+.row {
+ margin-top: 10px !important;
+}
+
+.error{
+	color : red;
+}
+
+#body{
+	margin-top: 10% !important;
+}
