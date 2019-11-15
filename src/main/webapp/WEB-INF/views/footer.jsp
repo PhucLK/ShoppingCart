@@ -5,7 +5,7 @@
 
 
 <div class="jumbotron text-center"
-	style="margin-top: 10rem !important; padding-top: 2%;">
+	style="margin-top: 10rem !important; padding-top: 2%; margin-bottom: 0px;">
 	<div class="container-fluid"">
 		<div class=container-fluid>
 			<div class="row" style="text-align: left;">
@@ -28,6 +28,11 @@
 				</div>
 			</div>
 		</div>
-		<h3 style="padding-top: 3%;">Needs Of Wisdom® All Right Reserved</h3>
+
+	</div>
+	<div class="container-fuild">
+		<h3
+			style="background-color: black; color: white; padding: 30px; padding-top: 3%; width: 100%">Needs
+			Of Wisdom® All Right Reserved</h3>
 	</div>
 </div>

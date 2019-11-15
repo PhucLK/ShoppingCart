@@ -9,6 +9,27 @@
 <head>
 <title>Shopping Cart</title>
 <jsp:include page="header.jsp"></jsp:include>
+<style type="text/css">
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: #007BFF;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+}
+
+#myBtn:hover {
+	background-color: #066DFF;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="menu.jsp"></jsp:include>
@@ -94,22 +115,20 @@
 
 				</c:forEach>
 			</div>
-			<a id="back-to-top" href="#"
-				class="btn btn-primary btn-lg back-to-top" role="button"
-				title="Click to return on the top page" data-toggle="tooltip"
-				data-placement="left">Top <span
-				class="glyphicon glyphicon-chevron-up"></span>
-			</a>
+
 		</div>
-		<nav aria-label="...">
-			<ul class="pagination">
+		<nav aria-label="Page navigation ">
+			<ul class="pagination justify-content-center">
 				<li class="page-item disabled"><a class="page-link" href="#"
 					tabindex="-1">Previous</a></li>
-				<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/home?page=0">1</a></li>
-				<li class="page-item active"><a class="page-link" href="${pageContext.request.contextPath}/home?page=1">2
-						<span class="sr-only">(current)</span>
+				<li class="page-item"><a class="page-link"
+					href="${pageContext.request.contextPath}/home?page=0">1</a></li>
+				<li class="page-item active"><a class="page-link"
+					href="${pageContext.request.contextPath}/home?page=1">2 <span
+						class="sr-only">(current)</span>
 				</a></li>
-				<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/home?page=2">3</a></li>
+				<li class="page-item"><a class="page-link"
+					href="${pageContext.request.contextPath}/home?page=2">3</a></li>
 				<li class="page-item"><a class="page-link" href="">Next</a></li>
 			</ul>
 		</nav>
@@ -117,27 +136,37 @@
 
 	</div>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(window).scroll(function() {
-				if ($(this).scrollTop() > 50) {
-					$('#back-to-top').fadeIn();
-				} else {
-					$('#back-to-top').fadeOut();
-				}
-			});
-			// scroll body to 0px on click
-			$('#back-to-top').click(function() {
-				$('#back-to-top').tooltip('hide');
+	<button id="myBtn" title="Go to top">Top</button>
+
+	<script>
+		//Get the button
+		var mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {
+			scrollFunction()
+		};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20
+					|| document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		$( document ).ready(function() {
+			$("#myBtn").click(function(){
 				$('body,html').animate({
 					scrollTop : 0
 				}, 800);
-				return false;
-			});
+				document.body.scrollTop = 100;
+				document.documentElement.scrollTop = 100;
+			})
+		})
 
-			$('#back-to-top').tooltip('show');
-
-		});
 	</script>
 </body>
 </html>
