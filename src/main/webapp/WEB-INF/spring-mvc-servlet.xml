@@ -18,6 +18,7 @@
 	<context:annotation-config />
 	<context:component-scan
 		base-package="com.spring.SpringJ32_JPA" />
+		
 	<!-- config views -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -66,7 +67,6 @@
 	</bean>
 
 	<!-- scan resources -->
-	<mvc:annotation-driven />
 	<mvc:resources mapping="/resources/**"
 		location="/resources/" />
 

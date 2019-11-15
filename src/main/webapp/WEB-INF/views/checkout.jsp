@@ -7,6 +7,11 @@
 <head>
 <title>Check Out</title>
 <jsp:include page="header.jsp"></jsp:include>
+<style type="text/css">
+.error {
+	color: red;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
@@ -14,40 +19,39 @@
 		<div class="row">
 			<div class="col-lg-7 col-sm-12">
 				<div class="container">
-					<h2>CheckOut</h2>
+					
 					<form:form method="post" modelAttribute="customer"
 						class="form-horizontal"
 						action="${pageContext.request.contextPath}/thanks">
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="name">Name:</label>
+							<label class="control-label col-sm-2" for="name">Name :</label>
 							<div class="col-sm-10">
-								<form:input path="name" id="name" class="form-control"
-									placeholder="Enter your name" />
+								<form:input required="required" path="name" id="name"
+									class="form-control" placeholder="Enter your name" />
 								<form:errors path="name" cssClass="error"></form:errors>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="phone">Phone
-								Number:</label>
+							<label class="control-label col-sm-2" for="phone">Phone :</label>
 							<div class="col-sm-10">
-								<form:input path="phoneNumber" id="phone" class="form-control"
-									placeholder="Enter your phone number" />
+								<form:input required="required" path="phoneNumber" id="phone"
+									class="form-control" placeholder="Enter your phone number" />
 								<form:errors path="phoneNumber" cssClass="error"></form:errors>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="email">Email:</label>
+							<label class="control-label col-sm-2" for="email">Email :</label>
 							<div class="col-sm-10">
-								<form:input path="email" id="email" class="form-control"
-									placeholder="Enter your email" />
+								<form:input required="required" path="email" id="email"
+									class="form-control" placeholder="Enter your email" />
 								<form:errors path="email" cssClass="error"></form:errors>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="address">Address:</label>
+							<label class="control-label col-sm-2" for="address">Address :</label>
 							<div class="col-sm-10">
-								<form:input path="address" id="address" class="form-control"
-									placeholder="Enter your address" />
+								<form:input required="required" path="address" id="address"
+									class="form-control" placeholder="Enter your address" />
 								<form:errors path="address" cssClass="error"></form:errors>
 							</div>
 						</div>
@@ -77,8 +81,8 @@
 									<span>${orderDetail.quantity}</span>
 								</c:forEach></td>
 							<td scope="col" style="text-align: left !important;"><p>${orderDetail.product.name}</p>
-								<p>${orderDetail.orderSizes.sizeOrder}</p></td>
-							<td scope="col">${orderDetail.amount} VND</td>
+								<p>${orderDetail.orderSizeTem}</p></td>
+							<td scope="col">${orderDetail.amount}VND</td>
 
 							<!-- 
 							<td scope="col">
@@ -110,7 +114,7 @@
 					<tr>
 						<th scope="col">Total</th>
 						<th scope="col"></th>
-						<th scope="col">${total} VND</th>
+						<th scope="col">${total}VND</th>
 					</tr>
 				</table>
 			</div>

@@ -195,11 +195,11 @@ public class HomeController {
 	}
 
 	@PostMapping("/thanks")
-	public String thanks(Model model, @ModelAttribute("customer") @Valid Customer customer, BindingResult result) {
+	public String thanks(Model model,@Valid @ModelAttribute("customer")  Customer customer, BindingResult result) {
 		// System.out.println(customer.toString());
 
 		if (result.hasErrors()) {
-			model.addAttribute("customer", new Customer());
+			model.addAttribute("customer", customer);
 			model.addAttribute("lenght", listOrderDetails.size());
 			model.addAttribute("ListOrderDetail", listOrderDetails);
 			model.addAttribute("total", ordersService.getTotal(listOrderDetails));

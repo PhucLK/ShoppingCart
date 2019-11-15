@@ -120,11 +120,13 @@ public class AdminController {
 			String realPathtoUploads = request.getServletContext().getRealPath("/");
 			
 			List<MultipartFile> listMultipartFile = images.getImage();
+			List<Images> listImage = new ArrayList<Images>();
 			for (MultipartFile multipartFile : listMultipartFile) {
 
 				Images image = new Images();
 				String fileName = multipartFile.getOriginalFilename();
 				image.setName(fileName);
+				listImage.add(image);
 				p = productService.saveProductS(p, sizes,image);
 				
 				String array[] = realPathtoUploads.split("\\.");
@@ -141,6 +143,8 @@ public class AdminController {
 				}
 
 			}
+			p.setImages(listImage);
+			productService.saveP(p);
 			
 			return "redirect:/admin/list";
 		} else {
@@ -158,7 +162,15 @@ public class AdminController {
 
 		if (product != null) {
 			List<Size> listSize = product.getSizes();
+			//
+			for(Size s : listSize) {
+				System.out.println(s.getName());
+				System.out.println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''");
+			}
+			
+			List<Images> listImage = product.getImages();
 			model.addAttribute("product", product);
+			model.addAttribute("idImages", product.getImages());
 			model.addAttribute("action", "editProduct");
 
 			String sizes[] = { "S", "M", "L", "Xl" };

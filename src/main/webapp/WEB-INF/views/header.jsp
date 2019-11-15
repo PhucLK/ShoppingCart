@@ -14,4 +14,4 @@
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
 <link rel="stylesheet"
-	href="<c:url value="/resources/style_shopping.css" />" />
+	href='<c:url value="/resources/style_shopping.css" />' />

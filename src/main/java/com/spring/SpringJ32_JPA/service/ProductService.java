@@ -26,7 +26,7 @@ public class ProductService {
 	@Autowired
 	SizeService sizeService;
 
-	public void save(Product p) {
+	public void saveP(Product p) {
 		productRepository.save(p);
 	}
 
